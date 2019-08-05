@@ -9,5 +9,5 @@ class Subhelp:
         self.command = command
     
     def result(self):
-        res = Popen(self.command, stdout = PIPE, stderr = PIPE, shell = True).communicate(timeout = 2000)[0].decode()
+        res = Popen(self.command, stdout = PIPE, stderr = PIPE, shell = True, executable='/bin/bash').communicate(timeout = 2000)[0].decode()
         return res
